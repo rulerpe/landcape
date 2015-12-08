@@ -16,7 +16,7 @@ angular.module('landscapeApp')
     	propertyId: "",
     };
     $scope.addNewservice = function(){
-    	$scope.newService.propertyId = $scope.propertyId
+    	$scope.newService.propertyId = $scope.propertyId;
     	$scope.service.addNewservice($scope.newService);
     	$scope.newService = {
 	    	title: "",
@@ -28,6 +28,6 @@ angular.module('landscapeApp')
 	    $scope.adding = false;
     }
     $scope.cancel = function(){
-    	adding = false
+    	$scope.adding = false
     }
   });
