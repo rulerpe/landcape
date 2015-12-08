@@ -1,0 +1,30 @@
+
+<form class="form-inline center" ng-submit="service.getGraphArr(year)">
+	  <div class="form-group">
+	    <label for="year">Year</label>
+	    <input type="text" class="form-control" id="year" ng-model="year">
+	  </div>
+	  <button type="submit" class="btn btn-default">View</button>
+	</form>
+<table class="table">	
+	<tr>
+		<th>Month/Job</th>
+		<th ng-repeat='n in ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"]'>{{n}}</th>
+	</tr>
+	<tr>
+		<th>Plant trimming</th>
+		<th ng-repeat="x in service.graphArr[0] track by $index"><p ng-show="x==0">-</p><p ng-show="x!=0">{{x}}</p></th>
+	</tr>
+	<tr>
+		<th>Leaf and garbage pickup</th>
+		<th ng-repeat="x in service.graphArr[1] track by $index"><p ng-show="x==0">-</p><p ng-show="x!=0">{{x}}</p></th>
+	</tr>
+	<tr>
+		<th>Dead plant replacement</th>
+		<th ng-repeat="x in service.graphArr[2] track by $index"><p ng-show="x==0">-</p><p ng-show="x!=0">{{x}}</p></th>
+	</tr>
+	<tr>
+		<th>Weed spraying</th>
+		<th ng-repeat="x in service.graphArr[3] track by $index"><p ng-show="x==0">-</p><p ng-show="x!=0">{{x}}</p></th>
+	</tr>
+</table>

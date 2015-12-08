@@ -5,7 +5,7 @@ angular.module('landscapeApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
@@ -13,6 +13,7 @@ angular.module('landscapeApp', [
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
+    
   })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {

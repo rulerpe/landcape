@@ -15,7 +15,7 @@ angular.module('landscapeApp')
         })
         .then( function() {
           // Logged in, redirect to home
-          $location.path('/');
+          $location.path('/allproperty');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;

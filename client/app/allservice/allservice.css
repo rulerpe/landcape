@@ -1,0 +1,13 @@
+.table {
+	border-top: 1px solid black;
+}
+
+.bottomMargin {
+	margin-bottom: 20px;
+}
+.row {
+	font-size: 20px;
+}
+.cneter {
+	text-align: center;
+}

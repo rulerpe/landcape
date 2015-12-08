@@ -1,0 +1,20 @@
+
+
+<div class="container">
+	<h1 class="center"> Property List</h1>
+  <div class="row">
+    <div class="col-md-12">
+     	<div class="addbutton center">
+			<form ng-submit="addNewProperty()">
+				<input type="text" placeholder="New address" ng-model="newAddess">
+				<button class="btn" type="submit" value="Submit">Add</button>
+			</form>
+		</div>
+    </div>
+    <div class="col-md-12">
+		<div class="table" ng-repeat="property in property.allPropertyies">
+			<a href="/allservice{{property._id}}/{{property.address}}"><h3>{{property.address}}</h3></a>
+		</div>
+	</div>
+  </div>
+</div>

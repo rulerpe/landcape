@@ -1,0 +1,60 @@
+
+
+
+<div class="container">
+	<h1 class="center">{{currentAddress}}</h1>
+	<button ng-click="showGraph = !showGraph" class="btn bottomMargin" type="button">Switch View</button>
+  <div ng-hide = "showGraph">
+  <div ng-hide="adding">
+
+   	<button ng-click="adding = true" class="btn bottomMargin" type="button">Add New Service</button>
+
+    <table class="table">
+    	<tr>
+    		<th>Job</th>
+			<th>Date</th>
+			<th>By</th>
+			<th>Hour spent</th>
+    	</tr>
+		<tr ng-repeat="service in service.servicesList">
+			<td>{{service.title}}</td>
+			<td>{{service.date | date:"shortDate"}}</td>
+			<td>{{service.name}}</td>
+			<td>{{service.timeSpent}} hrs</td>
+		</tr>
+	</table>
+</div>
+
+  <div ng-show="adding" class="row">
+    <div class="col-md-12">
+     	<form ng-submit="addNewservice()">
+		  <div class="form-group">
+		    <label >Job</label>
+		    	<select ng-model="newService.title" class="form-control">
+				  <option>Plant trimming</option>
+				  <option>Leaf and garbage pickup</option>
+				  <option>Dead plant replacement</option>
+				  <option>Weed spraying</option>
+				</select>
+		  <div class="form-group">
+		    <label>Date</label>
+		    <input type="text" class="form-control" ng-model="newService.date" placeholder="mm/dd/yyyy">
+		  </div>
+		  <div class="form-group">
+		    <label>Subcontractor name</label>
+		    <input type="text" class="form-control" ng-model="newService.name" placeholder="name">
+		  </div>
+		  <div class="form-group">
+		    <label>Hour spent</label>
+		    <input type="text" class="form-control" ng-model="newService.timeSpent" placeholder="hours">
+		  </div>
+		  <button type="submit" class="btn btn-default">Submit</button>
+		  <button type="text" class="btn btn-default" ng-click="cancel()">Cancel</button>
+		</form>
+    </div>
+  </div>
+</div>
+</div>
+<div ng-show="showGraph" graph>
+</div>
+  </div>
